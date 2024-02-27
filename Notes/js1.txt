@@ -1,0 +1,397 @@
+Javascript 
+----------
+    high level, 
+    in-time compiled and multi paradigm,
+    curly bracket syntax
+    dynamic typing
+    prototype based object oriented
+    first class function
+    can be used in both frontend and backend
+--------------------------------------------------------------
+Java : compiler based
+Javascript : interpreter based
+--------------------------------------------------------------
+Popular Frameworks: Node.js * , react, angular
+ElectronJS: framework to create desktop suite applications
+
+ECMAscript: Javascript standard meant to ensure the interoperability of web pages across differnet web browsers
+
+--------------------------------------------------------------
+Using JS:
+1. <script> ... </script>
+2. <script src="script.js"></script>
+
+--------------------------------------------------------------
+Javascript works on client side
+
+JS Engine:
+    Chrome: V8
+    Microsoft Edge: Chakra
+    Firefox: SpiderMonkey
+
+JS is loaded from Network, Cache, or Service Worker -> Goes to Byte Stream Decoder -> To Parser
+--------------------------------------------------------------
+DOM : Document Object Model (tree like structure)
+DOM View = <html> (-> <head> (-> <title> (-> text))), (<body> -> .....)
+
+querySelector: selects an element of a type
+
+--------------------------------------------------------------
+Ways to Add JS:
+1. Internal JS : <body> <script> document.addEventListener("DOMContentLoader", function(){ ...}); </script>  
+                    // DOMContentLoader makes sure to load DOM to prevent errors
+2. External JS : 
+    defer attribute : use defer attribute when using source file to make sure HTML and CSS are loaded first before js source file
+            <script defer src="js/script1.js"></script> (sequenced loading of various js file)
+    async attribute : (non-blocking) to load js file without blocking rest page. simultaneously with dom 
+    async and defer both instruct the browser to download the script in a seperate thread
+        defer when script need to wait for parsing and depend on other scripts/ DOM in place
+        async when script should run immediately and don't have dependencies
+
+--------------------------------------------------------------
+Javascript : 
+    Case Sensitive, Semi-colons are used,
+    Comments //    /* */
+    Dynamiclly Typed Language (var for int or string)
+    Data Types:
+        Primitve : Boolean (var b = true;), Undefined (var myVar;), String (var string = "Hello"),
+                    Null (var nu = null;), Number (int:100, float:100.5, hex:0xfff, exp:2.56e3, octal:030),
+        User Defined :  Objects (variable+functions)
+    Variables : container for a value
+        keyword : let, const, var
+    Name Conv. : camelCase, PascalCase, snake_case
+    Input : prompt();
+    Output : console.log();
+    Quokka.js Extension in VSCode to see resultant of var while typing;
+    Operators: 
+        Assignment : = (equal), 
+        Exponen : **
+        Comparsion : == (isEqual?), === (isStrictEqual?), ++ (Increment) 
+        Unary : + (can converst to number)
+        Etc 
+
+--------------------------------------------------------------
+Javascript : 
+    Control Flow Statement : 
+        Conditional:
+            if-else, switch-case-default
+        Loops: 
+            for(let i=0; i<n; i++){ console.log("Hi ")}
+            while(i<10){ .... i++}
+            do{ .... } while(condition)
+
+ex.     let animal = { name: "Zebra", leg: 4};
+        for(let key in animal){ console.log(key, animal[key]); }
+
+--------------------------------------------------------------
+Javascript: functions
+Function Declaration : function funcName( param,.. ){ ... };
+Function Expression : var funcName = function(){ ... };
+
+ex.     function add(x, y){ return x + y; }
+        alert(add(2, 3));
+        add(4, 6);
+    
+        var multiply = function(a, b){ return a * b; };
+        alert(multiply(2, 3));
+
+--------------------------------------------------------------
+Javascript : string
+let string = "Hello Welcome to Gourav\'s Haveli"
+String concatenation is done using '+' operator.
+number.toString() // converts int to string
+'${hello + welcome} Your Score is ${number}'; // template little
+var string = //object having various built in functions
+string.length      // gives the length of the string
+string[index]       // gives the character at the given index
+string.indexOf(substr)   // returns first occurance of substr from beginning
+string.slice(start, end)// returns part of string between start and end
+string.toUpperCase();
+string.toLowerCase();
+
+--------------------------------------------------------------
+Javascript : reference datatypes
+
+User-defined datatypes: Objects
+let person = {name:"Gourav", age:25, country:"India"};
+person["city"]="Delhi";                    //accessing property
+console.log(person);
+console.log(person.name);                  //accessing property
+for (let key in person) { console.log(key + ": " + person[key]) }; //loop through all properties
+delete person.age;                         //deletes the property
+Object.keys(person).forEach((k)=> console.log(`Key: ${k}, Value: ${person[k]}`))
+
+Arrays are like boxes containing items. Each item has an index associated with it. Index starts from 0.
+Items can be accessed by their indices using arrayname[index]
+let selectBooks = ["Think like a monk", "Theory of everything", "Atomic Habits"];
+console.log(selectBooks);
+console.log(selectBooks[1]);
+selectBooks.length;
+selectBooks.push("Outliers");             //Adding element at last
+selectBooks.pop();                          //Removing last element
+selectBooks.shift();                        //removes first element
+selectBooks.unshift("Sapiens")              //adds element at first
+selectBooks.splice(position, deleteCount, item1,.....)
+                                            //insert or remove elements
+
+Functions can also be stored in variables. They act as values just like any other data type.
+function namasteWorld(name, lastname){
+    console.log("Namaste "+ name+" "+ lastname);
+}
+namasteWorld("Gourav", "Singh");
+
+var multiplyTwo = function(a) {
+    return a*2;
+}
+var answer = multiplyTwo(3);
+console.log(answer);
+
+--------------------------------------------------------------
+Javascript : Coercion and Type Conversion
+Coercion is the automatic conversion of one data type to another. It happens when we try
+to mix different types of data together in expressions or assignments.
+
+Type Conversion is explicit conversion where we convert one data type into another explicitly.
+In Javascript there are two kinds of coercion - implicit/automatic and explicit/manual.
+
+Implicit / Automatic Coercion
+- When we use == operator for comparison, JavaScript automatically converts the operands so that they match.
+- This process is called Implicit Coercion.
+Examples:
+    5 == '5'   -> true (string gets converted to number)
+    5 == false -> true (boolean gets converted to number)
+    5 == []    -> true (array gets converted to number)
+    12/'6'  -> 2 (number gets converted to string)
+    4+true   -> 5 (boolean gets converted to number)
+    'true' == true  -> false  //NaN == 1
+    123 + '' //implicit conversion
+
+Explicit / Manual Coercion 
+- We use functions provided by JavaScript to do this manually. These functions are parseInt(), parseFloat() and String().
+- We use functions provided by JavaScript to convert one data type to another. These functions are:
+    parseInt(), parseFloat() - used for String to Number conversions.
+    String()      - used for anything to String conversions.
+    Boolean()     - used for anything to Boolean conversions.
+        Boolean(<like NaN, null, 0 , -0, undefined, false>)     // false
+    Math.floor()  - used for anything to Integer conversions.
+    Number()       - used for anything to Number conversions.
+        Number(null)-> 0, Number(undefined)-> NaN, Number(false)->0, etc
+
+
+Example:
+parseInt('45') + parseInt('78');        //returns 45+78=123
+String(45) + String(78);                //returns '4578'
+Boolean(0) || Boolean(-1) || Boolean('');// returns true because non zero
+[1] > null? true
+
+check : 
+https://wtfjs.com/
+https://dorey.github.io/JavaScript-Equality-Table/
+
+--------------------------------------------------------------
+Javascript : Objects
+A javascript object is a collection of properties which hold values along with their corresponding descriptions or methods.
+
+const course = {
+    lecture: 10,
+    section: 3,
+    title: 'Javascript',
+    notes: {
+        introduction: "Welcome to JS course"
+    },
+    enroll(){
+        console.log();
+    }
+}
+
+function enroll(){
+    console.log("You are successfully enrolled");
+}
+
+Primitive datatypes are also objects
+--------------------------------------------------------------
+Javascript : class
+class is a syntactic sugar over constructor function
+
+class Car {
+    constructor(brand, model){
+        this.brand = brand;
+        this.model = model;
+    }
+    
+    getBrand() {
+        return this.brand;
+    }
+}
+
+console.log(new Car('Toyota','Corolla').getBrand()); // Toyota
+
+getter and setter methods
+-------------------------
+Syntax for defining getter method in javascript
+var obj = {
+   get propertyName() {
+      // code of the getter method
+   }
+};
+
+Syntax for defining setter method in javascript
+var obj = {
+   set propertyName(value) {
+      // code of the setter method
+   }
+};
+
+extending class:
+
+--------------------------------------------------------------
+Javascript : Array
+const array = [1,2,3,4,5,6,7,8,9];
+console.log(array);
+console.log(array[array.length-1]);
+
+const num = new Array(1,2,3,4,5,6,7,8,9);
+
+// push
+num.push(10);
+console.log(num);
+
+// unshift
+num.unshift(0);
+console.log(num);
+
+// pop
+num.pop();
+console.log(num);
+
+// shift
+num.shift();
+console.log(num);
+
+
+// []
+num[0] = {num:80};
+num[0]= true;
+num[0] = 'Gourav';
+
+
+const names = ['Amal', 'Devang', 'Gorav', 'pussu', 'Gourav', 'pussu'];
+// .indexOf()
+console.log(names.indexOf('pussu', 4));
+
+// .lastIndexOf()
+// returns last occurence of an element
+
+// .includes('Amal')
+// returns true if element is present
+
+// .find(x=> x%2 == 0) // return first element which satisfies the condition
+// .find(function(element){return  element % 2 === 0})
+
+
+// .filter((name)=> 
+//     name.length > 4 && name !=='Amal')
+
+let filterdNames= names.filter(function (name) {
+    return name.length > 4 && name !=="Amal";
+});
+console.log(filterdNames);
+let cities = [
+    {name: 'Mumbai', population: 20000},
+    {name: 'Kolkata', population: 40000},
+    {name: 'Phagwara', population: 45000},
+    {name: 'Jaipur', population: 10000}
+];
+
+console.log(cities.filter(city => city.population > 30000 ))
+// Map method
+console.log(cities.map(city => city.population * 2))
+
+
+// concat method
+// let names2 = names1.concat(names2);
+
+// slice method
+// takes two arguments start and end, it will give elements from start to end-1 index
+let slicedNames = names.slice(3,5);
+
+
+// spread operator
+let sum = num + ...num;
+let names1= ['Amal', 'Dhanvan', 'Akash']
+let names2 = ['Akshit', 'Neha', 'Supriya']
+// let names3 = names1.concat(names2);
+let names3 = [...names1, ...names2]
+console.log(names3) 
+
+
+// For loop
+for (let i = 0 ;i<names.length; i++) {
+    console.log(`${i} : ${names[i]}`);
+}
+
+// For of
+for(let name of names){
+    console.log(name);
+}
+
+// For-Each   // doesnt exist in js, but there is a method, forEach in Array
+names.forEach(function(name, index){
+    console.log(name, index);
+})
+
+// While loop
+let i = 0;
+while(i < names.length){
+    console.log(names[i]);
+    i++;
+}
+
+let student = ['G', 'o', 'u', 'r', 'a', 'v']
+student.join()      // output : G,o,u,r,a,v
+student.join('')    // output : Gourav
+student.join('_')   // output : G_o_u_r_a_v
+
+// Split method
+'Gourav'.split('');     //output: ['G','o','u','r','a','v']
+'Gourav'.split('a');   //output: ['Gour','v']
+'Hello World!'.split(' ', 2); //output: ['Hello', 'World!']
+
+--------------------------------------------------------------
+
+Javascript : Scope 
+Principle of least access
+1. Local scope - only accessible within the function it was declared
+    ex. var inside for loop, use let  instead of var to avoid hoisting
+2. Global scope - accessible throughout the entire application
+    ex. var mod = 1e9+7; use var instead of  let and const because they are not hoisted
+3. Block scope - only available within {} brackets
+4. Window scope - global object or browser window
+5. Closure - A function that has access to variables from an outer function even after that function has finished execution
+5. Closure scope - when we declare a variable inside another function and return that from outer function
+6. Module pattern - private members using closures
+7. IIFE (Immediately Invoked Function Expression)
+8. this keyword - represents the current context/object
+
+--------------------------------------------------------------
+Javascript : Hoisting
+Hoisting means moving all declarations to the top of JavaScript code. It doesn’t actually move the code, just moves the declaration. The value remains at its original
+Functions/ variables are hoisted before execution (in execution context).
+
+let                                     | var
+not hoisted (are in temp. dead zone)      hoisted  but not initialized                  // const must be intialized
+initialized with undefined                initialized with undefined                
+cannot be accessed before declaration     can be accessed even before declaration
+variable shadowing
+
+var x = 10;
+console.log(x);        // Output : 10
+
+function func(){
+ console.log(x);         // Output : ReferenceError: x is not defined
+}
+func();                // Output : ReferenceError: x is not defined
+
+var x;                 // Variable Declaration
+
+------------------------------------------------------------

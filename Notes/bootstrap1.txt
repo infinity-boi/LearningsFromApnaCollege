@@ -1,0 +1,33 @@
+Bootstrap: most popular front-end open-source toolkit
+    features:
+        sass variable and mixins
+        responsive grid system
+        extensive prebuilt components
+        powerful Javascript plugins
+Bootstrap=CSS+JS files
+
+--------------------------------------------------------------
+goto: https://getbootstrap.com/docs/
+--------------------------------------------------------------
+step1: download BoootStrap file or link CDN via jsDelivr or use Starter template
+step2: Copy req code for particular component/ element 
+step3: Paste in your file
+step4: Make necessary changes / Customize
+
+--------------------------------------------------------------
+Learn
+    basics
+    customization
+    layouts
+    grid system
+    components
+--------------------------------------------------------------
+Compiling Codes
+
+We can use different bootstrap classes in the elements with particular properties
+
+--------------------------------------------------------------
+
+Bootstrap components : liek jumbotron, etc 
+
+

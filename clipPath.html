@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Clip Path</title>
+    <style>
+        .clip-hex{
+            width: 400px;
+            height: 400px;
+            object-fit:cover;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img class="clip-hex" src="resources/galaxy.jpg" alt="Galaxy pic">
+    </div>
+</body>
+</html>

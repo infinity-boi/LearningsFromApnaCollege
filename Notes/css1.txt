@@ -1,0 +1,207 @@
+CSS : Cascading Style Sheets
+----------------------------
+
+Synax of CSS...
+    h1#selector { color#property : blue#value; font-size : 12px; }
+Property: Values ---> Defined            
+                  '-> predefined             //declaration
+--------------------------------------------------------------------------
+
+3 Ways to Link CSS in HTML: 
+1> Inline                       //inside <body><xyz ...>
+    style="property: value;"
+
+2> External                     //in CSS file
+    <link rel="stylesheet" href="style/style.css">
+
+3> Internal                     //inside <head><style>...
+    xyz{                            //where xyz is slector
+        property: value;
+    }
+
+-------------------------------------------------------------------------
+
+Types of Selectors 
+
+Combined Selector:
+    h1,p,span{
+        property:value;
+    }
+Type Selector:          //<h1>Namaste</h1>
+    h1{property:value;}
+
+Class Selector:         //<h1 class="className">
+    .className{property:value;}
+
+Id Selector:            //<h1 id="idName">
+    #idName{property:value;}
+
+Attribute Selector:     //<a href="www.example.com">
+    a[href="www.example.com"] {property:value;}
+
+Pseudo Class Selector: Used to style states of Element
+:hover, :visited   //pseudo-class
+    selector: pseudo-class{property:value;}
+
+Pseudo Element Selector:        //<p>Lorem ipsum...
+                                  Dipsum gypsum...</p>
+    p::first-line{color:brown;}
+
+Combinator Selector:            //blah blah
+    article > p {property: value;}
+
+Universal Selector:
+    * {property: value;}
+
+Descendant Combinator: li em{...}           //em inside li
+Adjacent Combinator: h1+p{...}              //if p is after h1
+
+Combination : body h2.special, li, p{...}       //special is a class  //h2 inside body
+------------------------------------------------------------------------------
+---------------
+Property in CSS
+---------------
+
+color in CSS
+    color:red;
+    border-color:blue;
+    background-color:blue;
+Values: 
+    rgba #RedBlueGreenAlpha      ///alpha for opacity or transparency
+        range: 0-255
+    #rrggbb : hexadecimal colors
+        range: 00-FF
+search: https://developer.mozilla.org/en-US/docs/Web/CSS/color
+---------------
+
+background in CSS
+    background-color: red;
+    background-image:url("images.jpeg");
+    background-repeat: repeat-y; (or no-repeat)
+    background-poistion:top;        background-poistion:bottom 50px right 100px;
+    background-attachment: fixed;
+---------------  
+
+fonts in CSS
+    font-family: serif;             (or cursive, system-ui)
+    font-style: oblique 40deg;      (or normal, italic, oblique)
+    font-size: value;
+        value=  smaller or 80% or 12px or 1.2em
+    font-weight: value;
+        value= normal, bold, bolder, lighter, 100, 200,..., 900
+    line-height: 1.5;
+fonts available at : https://fonts.google.com/
+    select font/copy link/ paste inside <head>
+---------------
+
+formatting text in CSS
+    color:red;
+    text-align:center;              (or left, right, justify)
+    text-decoration: line-through;  (or overline, underline, underlie overline)
+    text-transform: capitalize;     (or uppercase, lowercase, none, full-width)
+    text-indent:30%;                (or 0, -3em)
+    text-shadow: offset-x offset-y blur-radius color;  (ex. 1px 2px 2px black)
+    text-spacing: .2rem;            (or normal, 1px, -1px)
+    word-spacing: normal;           (or 1rem, 4px, 120%, -4ch)
+
+---------------
+Shorthand Property:   //search for reference
+    background
+    font
+    margin (padding)
+    border
+ex. 
+    background: #000 url(bg.gif) no-repeat, left, top;
+---------------
+-------------------------------------------------------------------------------------
+
+How CSS works?
+Load html -> Parse html (->) Create DOM tree  -> Display
+                \|/              /|\
+            Load CSS     ->   Parse CSS
+
+DOM: document object model
+
+-------------------------------
+Units in CSS
+Relative Units:
+    em	Relative to the font-size of the element (2em means 2 times the size of the current font)	
+    ex	Relative to the x-height of the current font (rarely used)	
+    ch	Relative to the width of the "0" (zero)	
+    rem	Relative to font-size of the root element	
+    vw	Relative to 1% of the width of the viewport*	
+    vh	Relative to 1% of the height of the viewport*	
+    vmin	Relative to 1% of viewport's* smaller dimension	
+    vmax	Relative to 1% of viewport's* larger dimension	
+    %	Relative to the parent element
+Absolute Units:
+    cm	centimeters
+    mm	millimeters
+    in	inches (1in = 96px = 2.54cm)
+    px *	pixels (1px = 1/96th of 1in)
+    pt	points (1pt = 1/72 of 1in)
+    pc	picas (1pc = 12 pt)
+---------------------------------------------
+
+CSS Box Model: every element is surrounded by a box
+    margin:   
+        border:   
+            padding: 
+                content area: element size
+
+Padding: spacing around content
+    (can be given background color same as element)
+------------------------------------------------
+
+Styling Lists:
+    list-style-type: disc;      (or square, circle, roman, etc)
+    list-style-position: outside;   (or inside)
+    list-style-image: url("/image.jpeg")
+
+float: 
+overflow: when content comes out of box
+------------------------------------------------
+
+Styling Tables:
+    table, th,td{
+        border: 10px solid black;
+    table{
+        border-collapse: seperate; (or collapse)
+        border-spacing: 5px 1rem;
+    th,td{
+        padding:15px;
+--------------------------------------------------------------------------------------
+
+Cascading: order is important in any rule;
+    ex. for two conflicting statements the later one is implemented
+
+Specificity: 
+    https://css-tricks.com/specifics-on-css-specificity/
+Precedence of CSS: Inline > Internal
+
+Inheritance: properties are inherited from parent element
+To control inheritance:
+    property: inherit; : property from parent element
+    property: initial; : default value of property
+    property: unset;   : sets to normal value 
+------------------------------------------------
+
+!important : makes the specificity of the / selector more important even if specificity is less
+ 
+Controlling overflow of content:
+    overflow: hidden;
+    overflow: scroll;
+    overflow: auto;   //mixed
+
+Images (Media)
+img{
+    object-fit: contain;        (or cover, fill, none)
+-------------------------------------------------------------------------
+
+Styling Forms
+-------------
+<input ... placeholder="Enter your name">
+-------------
+cursor:pointer;    (or zoom-in)
+
+--------------------------------------------------------------------------------------------

@@ -1,0 +1,163 @@
+HTML: 2-3 hr
+CSS: 3-5 hr
+JS : 3-4 hr
+Framework: 5-6 hr
+Version Control: 5-6 hr
+Database : 2hr
+------------------------------
+
+Domain Name: IP -> Server
+------------------------------
+
+<html>: hypertext markup language
+<tag> Element </tag>
+Nesting of elements
+
+Attributes: defines properties of elements. <tag attribute = ""...>
+Boolean Attributes: ex. required, disabled
+
+General purpose attributes:
+id: gives unique name  ex. <p id="xyz"> Hello...
+class:
+------------------------------
+
+Emmet Abbr: ! + @enter
+Emmet : https://docs.emmet.io/cheat-sheet/
+First file name : index.html
+-----------------------------
+
+Heading : <h1>, <h2>, <h3>, <h4>, <h5>, <h6>
+Paragraph: <p>
+Linebreak: <br>
+Horizontal Break: <hr>
+Bold: <b> or <strong>
+italics: <i> or emphasis text : <em>
+small text: <small>
+subscript: <sub>
+superscript: <sup>
+------------------------------------
+
+Entities in html: https://www.w3schools.com/charsets/ref_html_entities_4.asp
+&entity_name;
+--------------------------------------
+
+Comment: <!-- This is Comment -->
+lorem50: prints 50 words
+To comment a line of code: ctrl + /    (without selection)
+---------------------------------------------
+List:
+1. ordered List: <ol> <li>first</li> <li>second</li> ... </ol>
+    type=""  (A, a, 1, I, i)
+2. description List: defines terms <dl> <dt><dd>
+3. unordered List: <ul> <li> x </li> <li> y </li> ... </ul>
+
+Nesting of lists
+----------------------------------------------
+
+Hyperlink: <a> anchor tag
+<a href="url">
+url= uniform resource locator
+    absolute: root location
+    relative: /
+target="" (blank, )
+-------------------------------------------
+Image Tag: <img> 
+    src="url/path"
+    alt= "alternative text" also used by screen readers 
+    width="" or heigth="" use either at a time
+
+Video Tag: <video>    src, width, etc
+    autoplay
+    controls
+    loop
+    muted
+    poster="url/path" Thumbnail
+-----------------------------------------------
+
+Embedding other sites... ex. youtube video -> share -> embed -> copy paste
+<iframe> 
+    height, width
+    src="url"
+    frameborder=""
+    allow=""
+-------------------------------------------------
+creating table:
+<table>
+    <tr>  //table row
+        <th> City </th>   //heading
+        <td> Delhi </td>  //data
+        <td> Jaipur </td>
+    </tr>
+
+<th rowspan=""> (no of rows)  //merge rows
+<td colspan=""> (no of columns) //merge columns
+
+<thead><tr><th>...  //thead for headings
+<tbody><tr><th>...      //tbody for body
+<tfoot><tr><th colspan="">...    //for foot
+--------------------------------------------------
+
+<form> 
+    action
+    method
+<input>     // https://www.w3schools.com/html/html_form_input_types.asp
+    type="" (text, password, radio, checkbox, file, submit, reset, image, email, date, ...etc)   //predefinedvalue
+    name="firstname"
+    value="male"
+
+<textarea>      // for inputting big para/ multilineinput
+    name, id
+    cols
+    rows
+<select>          //scrolldown options
+    <option>
+        value=""
+
+----------------------------------------------------
+<fieldset> : grouping elements
+    <legend> : title of fieldset
+
+-----------------------------------------------------
+<header>  : for wrapping    //logo, heading, tagline, 
+<nav> : for wrapping      //navigation tabs
+<main> : main content
+    <article> : for articles
+    <section> : for unique functionality content
+    <aside> : for side bar 
+<footer>
+
+---------------------------------------------------------
+Semantic Tag: Tags which clearly defines the content...
+----------------------------------------------------------------------------------------------------------
+            <div>                           |           <span>  
+1)  for grouping elements having same       |      
+    functionality (js) or appearance (css)  |     
+2)  block-level element                     |   inline element                                            
+3)  The <div> element is often used as a    |   The <span> element is an inline container used to mark-up 
+    container for other HTML elements.      |   a part of a text, or a part of a document.
+                            
+----------------------------------------------------------------------------------------------------------
+Block-level elements:
+    <address><article><aside><blockquote><canvas><dd><div><dl><dt><fieldset><figcaption>
+    <figure><footer><form><h1>-<h6><header><hr><li><main><nav><noscript><ol><p><pre>
+    <section><table><tfoot><ul><video>
+
+Inline Elements: 
+    <a><abbr><acronym><b><bdo><big><br><button><cite><code><dfn><em><i><img><input><kbd>
+    <label><map><object><output><q><samp><script><select><small><span><strong><sub><sup>
+    <textarea><time><tt><var>
+
+---------------------------------------------------
+Whimsical: website for project plannig
+Figma:        "
+---------------------------------------------------
+
+href="#" // # represents empty url
+---------------------------------------------------
+
+To share work/project
+CodePen: https://codepen.io/
+---------------------------------------------------
+
+
+
